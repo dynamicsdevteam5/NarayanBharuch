@@ -1,0 +1,974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NarayanBharuchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CulturalProgram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InnovativExperiment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LifeSkillsProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ParsamniProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SapanaKaroSakar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StudentSubjectSeminar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TeachersGyanstra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Details" Type="varchar(max)" />
+          <Property Name="EventDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CulturalProgram_CulturalProgram">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="CulturalProgram" Type="Self.CulturalProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CulturalProgram">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InnovativExperiment_InnovativExperiment">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="InnovativExperiment" Type="Self.InnovativExperiment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InnovativExperiment">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LifeSkillsProject_LifeSkillsProject">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="LifeSkillsProject" Type="Self.LifeSkillsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LifeSkillsProject">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParsamniProject_ParsamniProject">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="ParsamniProject" Type="Self.ParsamniProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParsamniProject">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SapanaKaroSakar_SapanaKaroSakar">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="SapanaKaroSakar" Type="Self.SapanaKaroSakar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SapanaKaroSakar">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentSubjectSeminar_StudentSubjectSeminar">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="StudentSubjectSeminar" Type="Self.StudentSubjectSeminar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StudentSubjectSeminar">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeachersGyanstra_TeachersGyanstra">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="TeachersGyanstra" Type="Self.TeachersGyanstra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeachersGyanstra">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetCulturalProgramList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetInnovativExperimentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetLifeSkillsProjectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetParsamniProjectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetSapanaKaroSakarList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetStudentSubjectSeminarList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetTeachersGyanstraList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Search" Type="varchar" Mode="In" />
+          <Parameter Name="PageStart" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="SortColumn" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="NarayanBharuchModelStoreContainer">
+          <EntitySet Name="CulturalProgram" EntityType="Self.CulturalProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InnovativExperiment" EntityType="Self.InnovativExperiment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LifeSkillsProject" EntityType="Self.LifeSkillsProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParsamniProject" EntityType="Self.ParsamniProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SapanaKaroSakar" EntityType="Self.SapanaKaroSakar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentSubjectSeminar" EntityType="Self.StudentSubjectSeminar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeachersGyanstra" EntityType="Self.TeachersGyanstra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CulturalProgram_CulturalProgram" Association="Self.FK_CulturalProgram_CulturalProgram">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="CulturalProgram" EntitySet="CulturalProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InnovativExperiment_InnovativExperiment" Association="Self.FK_InnovativExperiment_InnovativExperiment">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="InnovativExperiment" EntitySet="InnovativExperiment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LifeSkillsProject_LifeSkillsProject" Association="Self.FK_LifeSkillsProject_LifeSkillsProject">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="LifeSkillsProject" EntitySet="LifeSkillsProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParsamniProject_ParsamniProject" Association="Self.FK_ParsamniProject_ParsamniProject">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="ParsamniProject" EntitySet="ParsamniProject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SapanaKaroSakar_SapanaKaroSakar" Association="Self.FK_SapanaKaroSakar_SapanaKaroSakar">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="SapanaKaroSakar" EntitySet="SapanaKaroSakar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentSubjectSeminar_StudentSubjectSeminar" Association="Self.FK_StudentSubjectSeminar_StudentSubjectSeminar">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="StudentSubjectSeminar" EntitySet="StudentSubjectSeminar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeachersGyanstra_TeachersGyanstra" Association="Self.FK_TeachersGyanstra_TeachersGyanstra">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="TeachersGyanstra" EntitySet="TeachersGyanstra" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NarayanBharuchModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NarayanBharuchEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="InnovativExperiments" EntityType="NarayanBharuchModel.InnovativExperiment" />
+          <EntitySet Name="Departments" EntityType="NarayanBharuchModel.Department" />
+          <AssociationSet Name="FK_InnovativExperiment_InnovativExperiment" Association="NarayanBharuchModel.FK_InnovativExperiment_InnovativExperiment">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="InnovativExperiment" EntitySet="InnovativExperiments" />
+          </AssociationSet>
+          <FunctionImport Name="GetInnovativExperimentList" ReturnType="Collection(NarayanBharuchModel.GetInnovativExperimentList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="UserMasters" EntityType="NarayanBharuchModel.UserMaster" />
+          <EntitySet Name="SapanaKaroSakars" EntityType="NarayanBharuchModel.SapanaKaroSakar" />
+          <AssociationSet Name="FK_SapanaKaroSakar_SapanaKaroSakar" Association="NarayanBharuchModel.FK_SapanaKaroSakar_SapanaKaroSakar">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="SapanaKaroSakar" EntitySet="SapanaKaroSakars" />
+          </AssociationSet>
+          <FunctionImport Name="GetSapanaKaroSakarList" ReturnType="Collection(NarayanBharuchModel.GetSapanaKaroSakarList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TeachersGyanstras" EntityType="NarayanBharuchModel.TeachersGyanstra" />
+          <AssociationSet Name="FK_TeachersGyanstra_TeachersGyanstra" Association="NarayanBharuchModel.FK_TeachersGyanstra_TeachersGyanstra">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="TeachersGyanstra" EntitySet="TeachersGyanstras" />
+          </AssociationSet>
+          <FunctionImport Name="GetTeachersGyanstraList" ReturnType="Collection(NarayanBharuchModel.GetTeachersGyanstraList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ParsamniProjects" EntityType="NarayanBharuchModel.ParsamniProject" />
+          <AssociationSet Name="FK_ParsamniProject_ParsamniProject" Association="NarayanBharuchModel.FK_ParsamniProject_ParsamniProject">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="ParsamniProject" EntitySet="ParsamniProjects" />
+          </AssociationSet>
+          <FunctionImport Name="GetParsamniProjectList" ReturnType="Collection(NarayanBharuchModel.GetParsamniProjectList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="LifeSkillsProjects" EntityType="NarayanBharuchModel.LifeSkillsProject" />
+          <AssociationSet Name="FK_LifeSkillsProject_LifeSkillsProject" Association="NarayanBharuchModel.FK_LifeSkillsProject_LifeSkillsProject">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="LifeSkillsProject" EntitySet="LifeSkillsProjects" />
+          </AssociationSet>
+          <FunctionImport Name="GetLifeSkillsProjectList" ReturnType="Collection(NarayanBharuchModel.GetLifeSkillsProjectList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="CulturalPrograms" EntityType="NarayanBharuchModel.CulturalProgram" />
+          <EntitySet Name="StudentSubjectSeminars" EntityType="NarayanBharuchModel.StudentSubjectSeminar" />
+          <AssociationSet Name="FK_CulturalProgram_CulturalProgram" Association="NarayanBharuchModel.FK_CulturalProgram_CulturalProgram">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="CulturalProgram" EntitySet="CulturalPrograms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentSubjectSeminar_StudentSubjectSeminar" Association="NarayanBharuchModel.FK_StudentSubjectSeminar_StudentSubjectSeminar">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="StudentSubjectSeminar" EntitySet="StudentSubjectSeminars" />
+          </AssociationSet>
+          <FunctionImport Name="GetCulturalProgramList" ReturnType="Collection(NarayanBharuchModel.GetCulturalProgramList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetStudentSubjectSeminarList" ReturnType="Collection(NarayanBharuchModel.GetStudentSubjectSeminarList_Result)">
+            <Parameter Name="Search" Mode="In" Type="String" />
+            <Parameter Name="PageStart" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="InnovativExperiment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_InnovativExperiment_InnovativExperiment" FromRole="InnovativExperiment" ToRole="Department" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InnovativExperiments" Relationship="NarayanBharuchModel.FK_InnovativExperiment_InnovativExperiment" FromRole="Department" ToRole="InnovativExperiment" />
+          <NavigationProperty Name="SapanaKaroSakars" Relationship="NarayanBharuchModel.FK_SapanaKaroSakar_SapanaKaroSakar" FromRole="Department" ToRole="SapanaKaroSakar" />
+          <NavigationProperty Name="TeachersGyanstras" Relationship="NarayanBharuchModel.FK_TeachersGyanstra_TeachersGyanstra" FromRole="Department" ToRole="TeachersGyanstra" />
+          <NavigationProperty Name="ParsamniProjects" Relationship="NarayanBharuchModel.FK_ParsamniProject_ParsamniProject" FromRole="Department" ToRole="ParsamniProject" />
+          <NavigationProperty Name="LifeSkillsProjects" Relationship="NarayanBharuchModel.FK_LifeSkillsProject_LifeSkillsProject" FromRole="Department" ToRole="LifeSkillsProject" />
+          <NavigationProperty Name="CulturalPrograms" Relationship="NarayanBharuchModel.FK_CulturalProgram_CulturalProgram" FromRole="Department" ToRole="CulturalProgram" />
+          <NavigationProperty Name="StudentSubjectSeminars" Relationship="NarayanBharuchModel.FK_StudentSubjectSeminar_StudentSubjectSeminar" FromRole="Department" ToRole="StudentSubjectSeminar" />
+        </EntityType>
+        <Association Name="FK_InnovativExperiment_InnovativExperiment">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.InnovativExperiment" Role="InnovativExperiment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InnovativExperiment">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetInnovativExperimentList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SapanaKaroSakar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_SapanaKaroSakar_SapanaKaroSakar" FromRole="SapanaKaroSakar" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK_SapanaKaroSakar_SapanaKaroSakar">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.SapanaKaroSakar" Role="SapanaKaroSakar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SapanaKaroSakar">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetSapanaKaroSakarList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="TeachersGyanstra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_TeachersGyanstra_TeachersGyanstra" FromRole="TeachersGyanstra" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK_TeachersGyanstra_TeachersGyanstra">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.TeachersGyanstra" Role="TeachersGyanstra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TeachersGyanstra">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetTeachersGyanstraList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="ParsamniProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_ParsamniProject_ParsamniProject" FromRole="ParsamniProject" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK_ParsamniProject_ParsamniProject">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.ParsamniProject" Role="ParsamniProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParsamniProject">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetParsamniProjectList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="LifeSkillsProject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_LifeSkillsProject_LifeSkillsProject" FromRole="LifeSkillsProject" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK_LifeSkillsProject_LifeSkillsProject">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.LifeSkillsProject" Role="LifeSkillsProject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LifeSkillsProject">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetLifeSkillsProjectList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="CulturalProgram">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_CulturalProgram_CulturalProgram" FromRole="CulturalProgram" ToRole="Department" />
+        </EntityType>
+        <EntityType Name="StudentSubjectSeminar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EventDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="NarayanBharuchModel.FK_StudentSubjectSeminar_StudentSubjectSeminar" FromRole="StudentSubjectSeminar" ToRole="Department" />
+        </EntityType>
+        <Association Name="FK_CulturalProgram_CulturalProgram">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.CulturalProgram" Role="CulturalProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CulturalProgram">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentSubjectSeminar_StudentSubjectSeminar">
+          <End Type="NarayanBharuchModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="NarayanBharuchModel.StudentSubjectSeminar" Role="StudentSubjectSeminar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StudentSubjectSeminar">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetCulturalProgramList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetStudentSubjectSeminarList_Result">
+          <Property Type="Int64" Name="RowNum" Nullable="true" />
+          <Property Type="Int32" Name="TotalRows" Nullable="true" />
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="DateTime" Name="EventDate" Nullable="false" Precision="23" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NarayanBharuchModelStoreContainer" CdmEntityContainer="NarayanBharuchEntities">
+          <EntitySetMapping Name="InnovativExperiments">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.InnovativExperiment">
+              <MappingFragment StoreEntitySet="InnovativExperiment">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetInnovativExperimentList" FunctionName="NarayanBharuchModel.Store.GetInnovativExperimentList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetInnovativExperimentList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="UserMasters">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.UserMaster">
+              <MappingFragment StoreEntitySet="UserMaster">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SapanaKaroSakars">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.SapanaKaroSakar">
+              <MappingFragment StoreEntitySet="SapanaKaroSakar">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetSapanaKaroSakarList" FunctionName="NarayanBharuchModel.Store.GetSapanaKaroSakarList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetSapanaKaroSakarList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TeachersGyanstras">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.TeachersGyanstra">
+              <MappingFragment StoreEntitySet="TeachersGyanstra">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetTeachersGyanstraList" FunctionName="NarayanBharuchModel.Store.GetTeachersGyanstraList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetTeachersGyanstraList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="ParsamniProjects">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.ParsamniProject">
+              <MappingFragment StoreEntitySet="ParsamniProject">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetParsamniProjectList" FunctionName="NarayanBharuchModel.Store.GetParsamniProjectList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetParsamniProjectList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="LifeSkillsProjects">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.LifeSkillsProject">
+              <MappingFragment StoreEntitySet="LifeSkillsProject">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetLifeSkillsProjectList" FunctionName="NarayanBharuchModel.Store.GetLifeSkillsProjectList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetLifeSkillsProjectList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CulturalPrograms">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.CulturalProgram">
+              <MappingFragment StoreEntitySet="CulturalProgram">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentSubjectSeminars">
+            <EntityTypeMapping TypeName="NarayanBharuchModel.StudentSubjectSeminar">
+              <MappingFragment StoreEntitySet="StudentSubjectSeminar">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetCulturalProgramList" FunctionName="NarayanBharuchModel.Store.GetCulturalProgramList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetCulturalProgramList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetStudentSubjectSeminarList" FunctionName="NarayanBharuchModel.Store.GetStudentSubjectSeminarList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NarayanBharuchModel.GetStudentSubjectSeminarList_Result">
+                <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+                <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

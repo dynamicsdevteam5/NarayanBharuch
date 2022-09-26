@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d29353d00da46e7a35c2173509b39e7" Name="Diagram1">
+        <EntityTypeShape EntityType="NarayanBharuchModel.InnovativExperiment" Width="1.5" PointX="0.5" PointY="2.875" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.Department" Width="1.5" PointX="0.5" PointY="0.75" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_InnovativExperiment_InnovativExperiment" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.UserMaster" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.SapanaKaroSakar" Width="1.5" PointX="2.625" PointY="3" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_SapanaKaroSakar_SapanaKaroSakar" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.TeachersGyanstra" Width="1.5" PointX="4.5" PointY="3" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_TeachersGyanstra_TeachersGyanstra" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.ParsamniProject" Width="1.5" PointX="2.75" PointY="7.5" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_ParsamniProject_ParsamniProject" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.LifeSkillsProject" Width="1.5" PointX="2.75" PointY="11.625" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_LifeSkillsProject_LifeSkillsProject" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.CulturalProgram" Width="1.5" PointX="2.75" PointY="15.875" />
+        <EntityTypeShape EntityType="NarayanBharuchModel.StudentSubjectSeminar" Width="1.5" PointX="2.75" PointY="19.5" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_CulturalProgram_CulturalProgram" />
+        <AssociationConnector Association="NarayanBharuchModel.FK_StudentSubjectSeminar_StudentSubjectSeminar" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

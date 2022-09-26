@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row CheckActive1" id="Dashboard">
+    
+    <div class="col-md-4 col-sm-6">
+        <a href="/Category/Category">
+            <div class="card">
+                <div class="card-body no-padding">
+                    <div class="alert alert-callout alert-danger no-margin">
+                        <h1 class="pull-right text-danger"><i class="md md-event"></i></h1>
+                        <strong class="text-xl">12</strong><br>
+                        <span class="opacity-50">Total Categories</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <a href="/Apps/Apps">
+            <div class="card">
+                <div class="card-body no-padding">
+                    <div class="alert alert-callout alert-warning no-margin">
+                        <h1 class="pull-right text-warning"><i class="md md-smartphone"></i></h1>
+                        <strong class="text-xl">50</strong><br>
+                        <span class="opacity-50">Total Applications</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+        <a href="/UserResponses/UserResponses">
+            <div class="card">
+                <div class="card-body no-padding">
+                    <div class="alert alert-callout alert-info no-margin">
+                        <h1 class="pull-right text-info"><i class="md md-account-circle"></i></h1>
+                        <strong class="text-xl">85</strong><br>
+                        <span class="opacity-50">Total Responses</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    });
+</script>
+

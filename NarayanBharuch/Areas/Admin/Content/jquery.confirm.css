@@ -1,0 +1,110 @@
+#confirmOverlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: -moz-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.1)), to(rgba(11,11,11,0.6))) repeat-x rgba(11,11,11,0.2);
+    z-index: 100000;
+    float: left;
+    background-color: #333333;
+    opacity: 0.9;
+}
+
+#confirmBox {
+    background-color: #fff;
+    -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+    color: #666;
+    margin: 15% auto;
+    width: 450px;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 1000;
+}
+
+    #confirmBox h1,
+    #confirmBox p {
+        background-color: #aa312c;
+        color: #fff;
+        padding: 15px 25px;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #confirmBox h1 {
+        letter-spacing: 0.3px;
+    }
+
+    #confirmBox p {
+        background: none;
+        font-size: 16px;
+        line-height: 1.4;
+        padding-top: 18px;
+        color: #666;
+        text-align: center;
+    }
+
+#confirmButtons {
+    padding: 10px 0 10px;
+    text-align: center;
+    background: #caf0ee;
+}
+
+#confirmBox .button {
+    webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    -webkit-transition: -webkit-box-shadow 0.15s ease-out;
+    -moz-transition: -moz-box-shadow 0.15s ease-out;
+    -o-transition: -o-box-shadow 0.15s ease-out;
+    transition: box-shadow 0.15s ease-out;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 4.5px 25px;
+    font-size: 15px;
+    line-height: 1.846153846;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+#confirmBox .blue {
+    color: #ffffff;
+    background-color: #aa312c;
+    border-color: #aa312c;
+}
+
+    #confirmBox .blue:hover {
+        color: #ffffff;
+        background-color: #651d1a;
+        border-color: #651d1a;
+        text-decoration: none;
+    }
+
+#confirmBox .gray {
+    color: #ffffff;
+    background-color: #f44336;
+    border-color: #f44336;
+    margin-left: 20px;
+}
+
+    #confirmBox .gray:hover {
+        color: #ffffff;
+        background-color: #f22314;
+        border-color: #f22314;
+        text-decoration: none;
+    }

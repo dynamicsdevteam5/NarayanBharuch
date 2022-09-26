@@ -1,0 +1,178 @@
+﻿@model NarayanBharuch.Areas.Admin.Models.AdminModel.StudentSubjectSeminarModel
+<style>
+    .uploadedImg {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 100px;
+        height: 100px
+    }
+</style>
+@using (Ajax.BeginForm("Index", "StudentSubjectSeminar", FormMethod.Post, new AjaxOptions { OnSuccess = "fnReset();OnComplete();", OnComplete = "datatablelist();", InsertionMode = InsertionMode.Replace, UpdateTargetId = "P_List" }, new { @class = "form form-validate", enctype = "multipart/form-data" }))
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Photos)
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.DepartmentId, (IEnumerable<SelectListItem>)ViewBag.DepartmentData, "Select", new { @class = "form-control", required = "", name = "DepartmentId", title = "Department is required." })
+                        <label for="DepartmentId">Department </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Title, new { required = "required", @class = "form-control ", name = "Title", maxlength = "250", title = "Title is required." })
+                        <label for="Title">Title </label>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group senddate">
+                        <label for="EventDate">Date</label>
+                        @Html.TextBoxFor(model => model.EventDate, "{0:dd/MM/yyyy}", new { @class = "form-control", name = "EventDate", @placeholder = "", @autocomplete = "new-eventdate", required = "required" })
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="Details">Details</label>
+                        @Html.TextAreaFor(m => m.Details, new { @class = "form-control ", name = "Details", title = "Detail is required." })
+                        <!-- The toolbar will be rendered in this container. -->
+                        <div id="toolbar-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="files">Upload</label>
+                        <input type="file" id="flImage" name="ImageUpload" onchange='UploadTempImage()' class="form-control" multiple="multiple">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="Photos">Photos</label>
+                        <br />
+                        <table class="table" id="FilesList" style="visibility:hidden">
+                            <thead>
+                                <tr>
+                                    <th>Photo</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (ViewBag.Photos != null)
+                                {
+                                    int cnt = 1;
+                                    foreach (var item in ViewBag.Photos)
+                                    {
+                                        <tr id="photo_@cnt">
+                                            <td class="eventPhoto"><img src="@item" alt="image" class="uploadedImg"></td>
+                                            <td>
+                                                <a href="javascript:void(0);" onclick="DeleteFile('photo_@cnt','@item')">
+                                                    <span class='glyphicon glyphicon-remove red'></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        cnt++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-actionbar">
+            <div class="card-actionbar-row">
+                <button class="btn ink-reaction btn-raised btn-primary" type="submit">Save</button>
+                <button class="btn ink-reaction btn-raised btn-danger" type="button" onclick="fnReset();clearTextarea();scrolltop();">Clear</button>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+    var formdata = new FormData();
+    $(document).ready(function () {
+        $('#EventDate').datepicker({
+            'format': 'dd/mm/yyyy',
+            'autoclose': true,
+            'todayHighlight': true,
+            changeMonth: true,
+            changeyear: true
+        });
+        chkatchtbl();
+    });
+    function chkatchtbl() {
+        if ($('#FilesList tr').length > 1) {
+            $("#FilesList").css("visibility", "visible");
+        } else {
+            $("#FilesList").css("visibility", "hidden");
+        }
+    }
+    function UploadTempImage() {
+        let frmData = new FormData();
+        let files = $("#flImage").get(0).files;
+        for (let i = 0; i < files.length; i++) {
+            frmData.append("fileInput", files[i]);
+        }
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            url: '@Url.Action("SaveToTemp", "StudentSubjectSeminar")',
+            data: frmData,
+            success: function (response) {
+                if (response != null && response != "") {
+                    let images = response.split(',');
+                    for (var i = 0; i < images.length; i++) {
+                        let my_path = images[i];
+                        let image = '<img src="' + my_path + '" alt="image" class="uploadedImg">';
+                        let srandomid = Math.random().toString(36).substring(7);
+                        let markup = "<tr id='" + srandomid + "'><td class='eventPhoto'>" + image + "</td>" +
+                            "<td><a href='#' onclick='DeleteFile(\"" + srandomid + "\",\"" + my_path + "\")'>" +
+                            "<span class='glyphicon glyphicon-remove red'></span></a></td></tr>"; // Binding the file name
+                        $("#FilesList tbody").append(markup);
+                    }
+                    chkatchtbl();
+                    SaveFilesToHiddenField();
+                }
+            },
+            error: function () {
+                alert("Whoops something went wrong!");
+            }
+        });
+    }
+    
+    function DeleteFile(fileId, path) {
+        let frmData = new FormData();
+        frmData.append("photo", path);
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("DeleteFile", "StudentSubjectSeminar")',
+            data: frmData,
+            contentType: false,
+            processData: false,
+            success: function () {
+                $("#" + fileId).remove();
+                chkatchtbl();
+                SaveFilesToHiddenField();
+           }
+        });
+    }
+
+    function SaveFilesToHiddenField() {
+        let photos = "";
+        let tagsValue = $(".eventPhoto");
+        $(".eventPhoto img").each(function (key, value) {
+            photos = photos + value.attributes.src.value + ",";
+        });
+        photos = photos.substring(0, photos.length - 1);
+        $("#Photos").val(photos);
+    }
+</script>

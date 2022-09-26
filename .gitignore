@@ -1,0 +1,17 @@
+packages/*
+NarayanBharuch/bin/*
+NarayanBharuch/obj/*
+NarayanBharuch/.vs/*
+*.h
+*.cpp
+*.pdb
+*.pdb
+*.pdb
+*.txt
+*.bak
+*.Cache
+*.txt
+*.txt
+*.cache
+*.txt
+*.cpp
